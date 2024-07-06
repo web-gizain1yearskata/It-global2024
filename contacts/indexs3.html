@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизація</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #07e497, #103284);
+            display: flex;
+            justify-content: center;
+            /* Центруємо контейнер на екрані */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            /* Збільшивши ширину для кращого відображення на великих екранах */
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            /* Розміщуємо елементи на протилежних боках контейнера */
+            align-items: center;
+            /* Вирівнюємо по вертикалі */
+            flex-direction: row-reverse;
+            /* Змінюємо напрямок для правильного розташування */
+        }
+
+        .container .content {
+            flex: 1;
+            /* Займає всю вільну ширину в контейнері */
+            text-align: left;
+            /* Текст у формі вирівнюємо зліва */
+            width: 70%;
+        }
+
+        .container .photo {
+            flex: 1;
+            /* Займає всю вільну ширину в контейнері */
+            max-width: 70%;
+            /* Максимальна ширина для зображення */
+            height: auto;
+            /* Автоматична висота для зображення */
+        }
+
+        .container h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: calc(100% - 40px);
+            /* Враховуємо розмір піктограми (40px) */
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .container input[type="email"]:focus,
+        .container input[type="password"]:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .container button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 84%;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .container p {
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .container p a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .container p a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .container .logo {
+            margin-bottom: 20px;
+            width: 150px;
+        }
+
+        .container .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container .form-group {
+            position: relative;
+        }
+
+        .container .form-group .icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        header {
+            background-color: #ffffffd9;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            height: 35px;
+            width: auto;
+        }
+
+        nav .menu {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav .menu li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav .menu li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff9800;
+            left: 50%;
+            bottom: -5px;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        nav .menu li a:hover {
+            color: #ff9800;
+        }
+
+        nav .menu li a:hover::after {
+            width: calc(100% - 20px);
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/src/logo.png" alt="Логотип IT Школа" class="logo">
+        <nav>
+            <ul class="menu">
+                <li><a href="/index.html">Головна</a></li>
+                <li><a href="/courses/index2.html">Курс</a></li>
+                <li><a href="/courses/news.html">Новини</a></li>
+                <li><a href="/pro_nas/info.html">Про нас</a></li>
+                <li><a href="/contacts/indexs3.html">Авторизація</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="content">
+                <h2>Авторизація</h2>
+                <form>
+                    <div class="form-group">
+                        <input id="email" type="email" placeholder="Пошта" required>
+                        <span class="icon">@</span>
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" placeholder="Пароль" required>
+                        <span class="icon" onclick="togglePasswordVisibility(this)">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+                    <button type="submit">Увійти</button>
+                </form>
+                <p>Ще не маєте аккаунту? <a href="#">Реєстрація</a></p>
+            </div>
+            <img class="photo" src="/src/IMG_0224.PNG" alt="Картинка">
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+        <script>
+            function togglePasswordVisibility(iconElement) {
+                let passwordField = document.getElementById("password");
+
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    iconElement.innerHTML = '<i class="fas fa-eye"></i>';
+                } else {
+                    passwordField.type = "password";
+                    iconElement.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                }
+            }
+        </script>
+    </main>
+</body>
+
+</html>

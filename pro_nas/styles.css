@@ -1,0 +1,264 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #07e497, #103284);
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+
+/* Шапка */
+header {
+    background-color: #ffffffd9;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+nav .menu {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav .menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav .menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s, left 0.3s;
+}
+
+nav .menu li a:hover {
+    color: #ff9800;
+}
+
+nav .menu li a:hover::after {
+    width: calc(100% - 20px);
+    left: 10px;
+}
+
+main {
+    color: white;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: #003366 1px solid;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #e0e0e0;
+}
+/* Футер */
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-container > div {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 200px;
+}
+
+.footer-links ul,
+.footer-social ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-social li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #07e497;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+.footer-subscribe form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-subscribe button {
+    padding: 10px;
+    background-color: #07e497;
+    border: none;
+    border-radius: 5px;
+    color: #003366;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-subscribe button:hover {
+    background-color: #05b57a;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ffffff;
+    padding-top: 20px;
+}
+
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    background: #f8f8ff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    margin-top: 20px;
+    color: #003366;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+#about p strong {
+    color: #ff9800;
+}
+
+#about p em {
+    color: #e0e0e0;
+    font-style: italic;
+}
+
+
+#about p:nth-child(odd) {
+    color: #f8f8ff;
+}
+
+#about p:nth-child(even) {
+    color: #c0c0c0;
+    font-style: italic;
+}
